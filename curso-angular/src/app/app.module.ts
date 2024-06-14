@@ -12,7 +12,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule
   ],
+  /**Estos dos modulos se pueden dejar o quitar ya que estan vacios: 
   providers: [],
+  exports:[],*/
   bootstrap: [AppComponent]
 })
 export class AppModule { }
