@@ -4,3 +4,4 @@ https://gist.github.com/sergiecode
 2. Angular cli explicacion
 3. Primera App en Angular
 4. Modulos Angular
+5. Componentes
