@@ -5,3 +5,4 @@ https://gist.github.com/sergiecode
 3. Primera App en Angular
 4. Modulos Angular
 5. Componentes
+6. Enlace de datos

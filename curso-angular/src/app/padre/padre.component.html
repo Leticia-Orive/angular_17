@@ -1,2 +1,8 @@
-<h1>Hola mundo en angular</h1>
-<app-hijo/>
+<!--Contador funcional-->
+<h1>Contador:</h1>
+<p>{{valorContador}}</p>
+<button (click)="incrementar()">Incrementar</button><!--El click se pone para que escuche y llama al valor del metodo-->
+<button (click)="decrementar()">Descrementar</button>
+
+<!--Con estas dos propiedades el hijo puede mandar al padre y recibir del padre
+<app-hijo [datoHijo]="datoPadre" (eventoHijo)="manejadorDeEventoDelPadre($event)"/> -->
