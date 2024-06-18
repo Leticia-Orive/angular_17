@@ -1,1 +1,12 @@
-<h1>Yo soy el hijo</h1>
+<!--<h1>El mensaje enviado fue:</h1>
+Esto sirve de ejemplo para los @input
+<p>{{recibeHijo}}</p>-->
+<div>
+    <label for="entrada">Escribí un mensaje para el padre:</label>
+    <input type="text" id="entrada" [(ngModel)]="mensaje">
+    <button type="button" (click)="enviarMensaje()">Enviar Mensaje</button>
+</div>
+<div>
+    <button (click)="incrementar()">Incrementar</button><!--El click se pone para que escuche y llama al valor del metodo-->
+<button (click)="decrementar()">Descrementar</button>
+</div>

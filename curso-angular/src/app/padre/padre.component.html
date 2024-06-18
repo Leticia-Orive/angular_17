@@ -1,3 +1,16 @@
+<app-hijo
+(incrementarDesdeHijo)="incrementar()"
+(decrementarDesdeHijo)="decrementar()"
+ (mensajeDesdeHijo)="recibirMensaje($event)"/>
+ <br>
+ <br>
+ <br>
+<h5>El mensaje recibido desde el hijo es: {{mensajeRecibido}}</h5>
+
+
+
+
+
 <!--Contador funcional-->
 <h1>Contador:</h1>
 <p>{{valorContador}}</p>
@@ -6,3 +19,5 @@
 
 <!--Con estas dos propiedades el hijo puede mandar al padre y recibir del padre
 <app-hijo [datoHijo]="datoPadre" (eventoHijo)="manejadorDeEventoDelPadre($event)"/> -->
+<!--Esto sirve para los @input
+<app-hijo [recibeHijo]="mensajePadre"></app-hijo>-->

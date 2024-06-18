@@ -6,3 +6,4 @@ https://gist.github.com/sergiecode
 4. Modulos Angular
 5. Componentes
 6. Enlace de datos
+7. Comunicacion entre componentes (Input Output)
