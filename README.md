@@ -9,3 +9,4 @@ https://gist.github.com/sergiecode
 7. Comunicacion entre componentes (Input Output)
 8. Servicios y dependencias
 9. Directivas
+10. Pipes

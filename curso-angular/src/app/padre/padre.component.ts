@@ -8,6 +8,10 @@ import { ServicioFamiliarService } from '../servicio-familiar.service';
 })
 export class PadreComponent implements OnInit {
 nombre?: string;
+fecha?: Date = new Date()
+euro?: number = 1000.5
+pi?: number = Math.PI //3.141492653589793
+factor: number = 0.5;
 constructor(private _servicioFamiliar: ServicioFamiliarService){}
 
 
