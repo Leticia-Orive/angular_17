@@ -1,23 +1,26 @@
-<app-hijo
+<!--<app-hijo
 (incrementarDesdeHijo)="incrementar()"
 (decrementarDesdeHijo)="decrementar()"
  (mensajeDesdeHijo)="recibirMensaje($event)"/>
  <br>
  <br>
  <br>
-<h5>El mensaje recibido desde el hijo es: {{mensajeRecibido}}</h5>
+<h5>El mensaje recibido desde el hijo es: {{mensajeRecibido}}</h5>-->
 
-
-
-
-
-<!--Contador funcional-->
+<!--Contador funcional
 <h1>Contador:</h1>
 <p>{{valorContador}}</p>
-<button (click)="incrementar()">Incrementar</button><!--El click se pone para que escuche y llama al valor del metodo-->
-<button (click)="decrementar()">Descrementar</button>
+<button (click)="incrementar()">Incrementar</button>El click se pone para que escuche y llama al valor del metodo
+<button (click)="decrementar()">Descrementar</button>-->
 
 <!--Con estas dos propiedades el hijo puede mandar al padre y recibir del padre
 <app-hijo [datoHijo]="datoPadre" (eventoHijo)="manejadorDeEventoDelPadre($event)"/> -->
 <!--Esto sirve para los @input
 <app-hijo [recibeHijo]="mensajePadre"></app-hijo>-->
+
+<!--Vamos a comunicar al padre con el hermano-->
+<h1>{{nombre}}</h1>
+<button type="button" (click)="saludar()">Saludar</button>
+<button type="button" (click)="preguntar()">Preguntar por hijo</button>
+
+
