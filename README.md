@@ -14,3 +14,4 @@ https://gist.github.com/sergiecode
 12. Bootstrap en Angular
     12.1 Vamos a la pagina oficial de bootstap https://getbootstrap.com/ y pegamos esto:
     npm i bootstrap@5.3.3
+13. Navegacion y rutas
