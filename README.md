@@ -12,7 +12,18 @@ https://gist.github.com/sergiecode
 10. Pipes
 11. Enrutamiento
 12. Bootstrap en Angular
-    12.1 Vamos a la pagina oficial de bootstap https://getbootstrap.com/ y pegamos esto:
-    npm i bootstrap@5.3.3
+    - Vamos a la pagina oficial de bootstap https://getbootstrap.com/ y pegamos esto:
+        - npm i bootstrap@5.3.3
 13. Navegacion y rutas
 14. Router y ActivatedRoute
+15. Estructuras de control:
+    - ngIf
+    - ngFor
+    - ngSwitch
+    - ngClass
+    - ngStyle
+    - ngContainer
+    Otras estructuras de contol
+    - ngTemplate
+    - ngPlural
+    - ngComponentOutlet
