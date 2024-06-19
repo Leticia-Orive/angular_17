@@ -1,16 +1,17 @@
 <div class="container">
     <!--Formulario de pantilla se pone asi form #miformulario="ngForm" -->
-  <form (ngSubmit)="enviar()">
+    <!--Formulario reactive se pone lo que viene a continuacion-->
+  <form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
     <div class="mb-3">
         <label for="name" class="form-label">Nombre</label>
-        <input type="email" class="form-control" id="name">
+        <input type="email" class="form-control" id="name" formControlName="nombre"><!--Formulario rective se añade lo que esta puesto detras del id-->
          <!--Esto se pone detras del id para los formularios de plantilla
         [(ngModel)]="usuario.nombre" required [ngModelOptions]="{standalone:true}"-->
         
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email </label>
-        <input type="email" class="form-control" id="email"> 
+        <input type="email" class="form-control" id="email" formControlName="email"> <!--Formulario rective se añade lo que esta puesto detras del id-->
         <!--Esto se pone detras del id para los formularios de plantilla
         [(ngModel)]="usuario.email " required [ngModelOptions]="{standalone: true}"
         -->
