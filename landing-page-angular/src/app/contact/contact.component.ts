@@ -23,7 +23,7 @@ export class ContactComponent {
  constructor(private form: FormBuilder){
   this.formularioContacto = this.form.group({
     /**Aqui añadimos los control */
-    nombre: ['', Validators.required],
+    nombre: ['', [Validators.required, Validators.minLength(3)]],
     /**Para poner dos validaciones tienen que ir las dos metidas en un [] o para entenderlo mejor doble corchete [[]] */
     email: ['',[Validators.required, Validators.email]]
   })
@@ -31,5 +31,8 @@ export class ContactComponent {
  enviar(){
   console.log(this.formularioContacto)
 
+ }
+ hasErrors(controlName: string, errorType: string ){
+  return this.formularioContacto.get(controlName)?.hasError(errorType) && this.formularioContacto.get(controlName)?.touched
  }
 }
