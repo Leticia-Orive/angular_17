@@ -1,46 +1,104 @@
 <div class="container">
-    <!--Formulario de pantilla se pone asi form #miformulario="ngForm" -->
-    <!--Formulario reactive se pone lo que viene a continuacion-->
+  <!--Formulario de pantilla se pone asi form #miformulario="ngForm" -->
+  <!--Formulario reactive se pone lo que viene a continuacion-->
   <form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
     <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
-        <!--Poner el recuadro rojo si no esta rellenado y es obligatorio-->
-        <input [ngClass]="{'is-invalid': hasErrors('nombre', 'required') || hasErrors('nombre', 'minlength')}" type="text" class="form-control" id="name" formControlName="nombre"><!--Formulario rective se añade lo que esta puesto detras del id-->
-         <!--Esto se pone detras del id para los formularios de plantilla
+      <label for="name" class="form-label">Nombre</label>
+      <!--Poner el recuadro rojo si no esta rellenado y es obligatorio-->
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('nombre', 'required') || hasErrors('nombre', 'minlength')
+        }"
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="nombre"
+      /><!--Formulario rective se añade lo que esta puesto detras del id-->
+      <!--Esto se pone detras del id para los formularios de plantilla
         [(ngModel)]="usuario.nombre" required [ngModelOptions]="{standalone:true}"-->
-        <!--Validators con error que solo se me muestre si es invalido o este mal puesto el nombre-->
-        <div  class="text-danger" *ngIf="hasErrors('nombre', 'required')">Nombre requerido</div>
-        <div  class="text-danger" *ngIf="hasErrors('nombre', 'minlength')">Nombre requerido mínimo 3 caracteres</div>
-
+      <!--Validators con error que solo se me muestre si es invalido o este mal puesto el nombre-->
+      <div class="text-danger" *ngIf="hasErrors('nombre', 'required')">
+        Nombre requerido
+      </div>
+      <div class="text-danger" *ngIf="hasErrors('nombre', 'minlength')">
+        Nombre requerido mínimo 3 caracteres
+      </div>
     </div>
     <div class="mb-3">
-        <label for="name" class="form-label">Apellido</label>
-        <input [ngClass]="{'is-invalid': hasErrors('apellido', 'required') || hasErrors('apellido', 'minlength')}" type="text" class="form-control" id="name" formControlName="apellido">
-        <div  class="text-danger" *ngIf="hasErrors('apellido', 'required')">Apellido requerido</div>
-        <div  class="text-danger" *ngIf="hasErrors('apellido', 'minlength')">Apellido requerido mínimo 3 caracteres</div>
-
+      <label for="name" class="form-label">Apellido</label>
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('apellido', 'required') ||
+            hasErrors('apellido', 'minlength')
+        }"
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="apellido"
+      />
+      <div class="text-danger" *ngIf="hasErrors('apellido', 'required')">
+        Apellido requerido
+      </div>
+      <div class="text-danger" *ngIf="hasErrors('apellido', 'minlength')">
+        Apellido requerido mínimo 3 caracteres
+      </div>
     </div>
     <div class="mb-3">
-        <label for="name" class="form-label">DNI</label>
-        <input [ngClass]="{'is-invalid': hasErrors('dni', 'required') || hasErrors('dni', 'minlength')}" type="text" class="form-control" id="name" formControlName="dni">
-        <div  class="text-danger" *ngIf="hasErrors('dni', 'required')">Dni requerido</div>
-        <div  class="text-danger" *ngIf="hasErrors('dni', 'minlength')">Dni requerido mínimo 3 caracteres</div>
+      <label for="tipoDni" class="form-label">Tipo de Dni</label>
+      <select class="form-select" id="tipoDni">
+        <option value="1">DNI</option>
+        <option value="2">Pasaporte</option>
+        <option value="3">NIF</option>
+      </select>
+    </div>
 
+    <div class="mb-3">
+      <label for="name" class="form-label">DNI</label>
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('dni', 'required') || hasErrors('dni', 'minlength')
+        }"
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="dni"
+      />
+      <div class="text-danger" *ngIf="hasErrors('dni', 'required')">
+        Dni requerido
+      </div>
+      <div class="text-danger" *ngIf="hasErrors('dni', 'minlength')">
+        Dni requerido mínimo 3 caracteres
+      </div>
     </div>
     <div class="mb-3">
-        <label for="email" class="form-label">Email </label>
-        <input [ngClass]="{'is-invalid': hasErrors('nombre', 'required') || hasErrors('email', 'email')}" type="email" class="form-control" id="email" formControlName="email"> <!--Formulario rective se añade lo que esta puesto detras del id-->
-        <!--Esto se pone detras del id para los formularios de plantilla
+      <label for="email" class="form-label">Email </label>
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('nombre', 'required') || hasErrors('email', 'email')
+        }"
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+      />
+      <!--Formulario rective se añade lo que esta puesto detras del id-->
+      <!--Esto se pone detras del id para los formularios de plantilla
         [(ngModel)]="usuario.email " required [ngModelOptions]="{standalone: true}"
         -->
-         <!--Validators con error-->
-        <div  class="text-danger" *ngIf="hasErrors('email', 'email')">Email invalido </div>
-        <!--Error si no relleno el formulario y he entrado que me muestre error-->
-        <div  class="text-danger" *ngIf="hasErrors('email', 'required')">Email requerido </div>
-        
+      <!--Validators con error-->
+      <div class="text-danger" *ngIf="hasErrors('email', 'email')">
+        Email invalido
+      </div>
+      <!--Error si no relleno el formulario y he entrado que me muestre error-->
+      <div class="text-danger" *ngIf="hasErrors('email', 'required')">
+        Email requerido
+      </div>
     </div>
-    
-    
+
     <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>  
+  </form>
 </div>
