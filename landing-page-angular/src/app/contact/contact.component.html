@@ -54,25 +54,9 @@
       </select>
     </div>
 
-    <div class="mb-3">
-        <!--Tenemos que hacer un interpoblado-->
-      <label for="name" class="form-label">{{tipoDni}}</label>
-      <input
-        [ngClass]="{
-          'is-invalid':
-            hasErrors('dni', 'required') || hasErrors('dni', 'minlength')
-        }"
-        type="text"
-        class="form-control"
-        id="name"
-        formControlName="dni"
-      />
-      <div class="text-danger" *ngIf="hasErrors('dni', 'required')">
-        {{tipoDni}} requerido
-      </div>
-      <div class="text-danger" *ngIf="hasErrors('dni', 'minlength')">
-        {{tipoDni}} requerido mínimo 3 caracteres
-      </div>
+    <div class="mb-3" *ngIf="mostrarDni">
+      <dni-input [tipoDni]="tipoDni"/>
+        
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email </label>

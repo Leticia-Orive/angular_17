@@ -32,6 +32,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   apellido: 'Perez',
   dni: '12345678'
  }*/
+  mostrarDni: boolean = false
   constructor(private form: FormBuilder) {
     this.formularioContacto = this.form.group({
       /**Aqui añadimos los control */
@@ -39,7 +40,7 @@ export class ContactComponent implements OnInit, OnDestroy {
       /*Ahora apellidos y dni sin validaciones
     apellido: [''],*/
       tipoDni: [''],
-      dni: [''],
+     
       apellido: ['', [Validators.required, Validators.minLength(3)]],
       /**Con validaciones 
    
@@ -60,8 +61,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     })*/
     /**Ahora nos vamos a subcribir solo al tipo dni */
     this.formularioContacto.get('tipoDni')?.valueChanges.subscribe((value) => {
+      this.mostrarDni = value != ''
       this.tipoDni = value;
-      
     });
 
     /**Ejemplos para las validators 

@@ -1,1 +1,20 @@
-<p>dni works!</p>
+<form [formGroup]="formularioDocumento">
+<!--Tenemos que hacer un interpoblado-->
+      <label for="name" class="form-label">{{variableNueva}}</label>
+      <input
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('dni', 'required') || hasErrors('dni', 'minlength')
+        }"
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="dni"
+      />
+      <div class="text-danger" *ngIf="hasErrors('dni', 'required')">
+        {{variableNueva}} requerido
+      </div>
+      <div class="text-danger" *ngIf="hasErrors('dni', 'minlength')">
+        {{variableNueva}} requerido mínimo 3 caracteres
+      </div>
+</form>
