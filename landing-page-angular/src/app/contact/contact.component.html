@@ -14,6 +14,20 @@
 
     </div>
     <div class="mb-3">
+        <label for="name" class="form-label">Apellido</label>
+        <input [ngClass]="{'is-invalid': hasErrors('apellido', 'required') || hasErrors('apellido', 'minlength')}" type="text" class="form-control" id="name" formControlName="apellido">
+        <div  class="text-danger" *ngIf="hasErrors('apellido', 'required')">Apellido requerido</div>
+        <div  class="text-danger" *ngIf="hasErrors('apellido', 'minlength')">Apellido requerido mínimo 3 caracteres</div>
+
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">DNI</label>
+        <input [ngClass]="{'is-invalid': hasErrors('dni', 'required') || hasErrors('dni', 'minlength')}" type="text" class="form-control" id="name" formControlName="dni">
+        <div  class="text-danger" *ngIf="hasErrors('dni', 'required')">Dni requerido</div>
+        <div  class="text-danger" *ngIf="hasErrors('dni', 'minlength')">Dni requerido mínimo 3 caracteres</div>
+
+    </div>
+    <div class="mb-3">
         <label for="email" class="form-label">Email </label>
         <input [ngClass]="{'is-invalid': hasErrors('nombre', 'required') || hasErrors('email', 'email')}" type="email" class="form-control" id="email" formControlName="email"> <!--Formulario rective se añade lo que esta puesto detras del id-->
         <!--Esto se pone detras del id para los formularios de plantilla
