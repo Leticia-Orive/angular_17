@@ -47,15 +47,16 @@
     </div>
     <div class="mb-3">
       <label for="tipoDni" class="form-label">Tipo de Dni</label>
-      <select class="form-select" id="tipoDni">
-        <option value="1">DNI</option>
-        <option value="2">Pasaporte</option>
-        <option value="3">NIF</option>
+      <select class="form-select" id="tipoDni" formControlName="tipoDni">
+        <option value="DNI">DNI</option>
+        <option value="Pasaporte">Pasaporte</option>
+        <option value="NIF">NIF</option>
       </select>
     </div>
 
     <div class="mb-3">
-      <label for="name" class="form-label">DNI</label>
+        <!--Tenemos que hacer un interpoblado-->
+      <label for="name" class="form-label">{{tipoDni}}</label>
       <input
         [ngClass]="{
           'is-invalid':
@@ -67,10 +68,10 @@
         formControlName="dni"
       />
       <div class="text-danger" *ngIf="hasErrors('dni', 'required')">
-        Dni requerido
+        {{tipoDni}} requerido
       </div>
       <div class="text-danger" *ngIf="hasErrors('dni', 'minlength')">
-        Dni requerido mínimo 3 caracteres
+        {{tipoDni}} requerido mínimo 3 caracteres
       </div>
     </div>
     <div class="mb-3">

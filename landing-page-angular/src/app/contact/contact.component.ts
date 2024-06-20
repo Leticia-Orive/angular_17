@@ -20,6 +20,8 @@ export class ContactComponent implements OnInit{
  /**Formulario Reactivos */
  /**Declaramos */
  formularioContacto: FormGroup
+ /**Creamos una variable */
+ tipoDni: string = 'DNI'
  /**Se puede poner asi:
   * usuarioActivo: string = 'Pedro'
   * Pero tambien asi:
@@ -36,6 +38,7 @@ export class ContactComponent implements OnInit{
     nombre: ['', [Validators.required, Validators.minLength(3)]],
     /*Ahora apellidos y dni sin validaciones
     apellido: [''],*/
+    tipoDni: [''],
     dni: [''],
      apellido: ['', [Validators.required, Validators.minLength(3)]],
     /**Con validaciones 
@@ -46,6 +49,19 @@ export class ContactComponent implements OnInit{
   });
  }
   ngOnInit(): void {
+    /**Subcripciones 
+     * Subcribirnos al formulario entero
+    
+    this.formularioContacto.valueChanges.subscribe(valor => {
+      console.log(valor)
+    })*/
+   /**Ahora nos vamos a subcribir solo al tipo dni */
+   this.formularioContacto.get('tipoDni')?.valueChanges.subscribe(value => {
+    this.tipoDni = value;
+   })
+
+
+
     /**Ejemplos para las validators 
     /**Si le queremos sacar el validators se pone: 
     this.formularioContacto.get('apellido')?.clearValidators();
