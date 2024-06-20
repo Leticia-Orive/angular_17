@@ -28,3 +28,6 @@ https://gist.github.com/sergiecode
     - ngPlural
     - ngComponentOutlet
 16. Formularios
+    - Formulario basado en plantilla (template-driven)
+    - Formulario reactivos (Reactive)
+
