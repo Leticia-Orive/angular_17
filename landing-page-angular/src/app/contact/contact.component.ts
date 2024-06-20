@@ -24,38 +24,60 @@ export class ContactComponent implements OnInit{
   * usuarioActivo: string = 'Pedro'
   * Pero tambien asi:
   */
+ /**Para las validators fijas y disabled 
  usuarioActivo: any = {
   nombre: 'Pedro',
   apellido: 'Perez',
   dni: '12345678'
- }
+ }*/
  constructor(private form: FormBuilder){
   this.formularioContacto = this.form.group({
     /**Aqui añadimos los control */
     nombre: ['', [Validators.required, Validators.minLength(3)]],
-    
-    apellido: ['', [Validators.required, Validators.minLength(3)]],
-    dni: ['', [Validators.required, Validators.minLength(3)]],
+    /*Ahora apellidos y dni sin validaciones
+    apellido: [''],*/
+    dni: [''],
+     apellido: ['', [Validators.required, Validators.minLength(3)]],
+    /**Con validaciones 
+   
+    dni: ['', [Validators.required, Validators.minLength(3)]],*/
     /**Para poner dos validaciones tienen que ir las dos metidas en un [] o para entenderlo mejor doble corchete [[]] */
     email: ['', [Validators.required, Validators.email]],
   });
  }
   ngOnInit(): void {
+    /**Ejemplos para las validators 
+    /**Si le queremos sacar el validators se pone: 
+    this.formularioContacto.get('apellido')?.clearValidators();
+    this.formularioContacto.get('apellido')?.updateValueAndValidity()*/
+      
+     
+    /**Apellido y dni sin validaciones otra forma de hacerlo, con esta forma puedo setear los validators fuera del constructor 
+    this.formularioContacto
+      .get('apellido')
+      ?.setValidators([Validators.required, Validators.minLength(3)]);*/
+
+      /**Si el seteo viene vacio lo puedes hacer de esta manera
+       * if(this.usuarioActivo.apellido === '') this.formularioContacto
+        .get('apellido')
+        ?.setValidators([Validators.required, Validators.minLength(3)]);
+       */
+      
     //Esto sirve para que el usuario se quede fijo
     /**Esto es un forma cuando solo queremos uno
      * this.formularioContacto.get('nombre')?.setValue(this.usuarioActivo)
      * this.formularioContacto.get('nombre')?.disable();
      */
-    /**Esto es otra forma para coger varios y hacer un parcheo */
-    this.formularioContacto.patchValue({
-      /**Aqui paso lo que quiero setear definitivamente */
+    /**Esto es otra forma para coger varios y hacer un parcheo 
+    this.formularioContacto.patchValue({*/
+      /**Aqui paso lo que quiero setear definitivamente 
       nombre: this.usuarioActivo.nombre,
       apellido: this.usuarioActivo.apellido,
       dni: this.usuarioActivo.dni,
     });
     this.formularioContacto.get('nombre')?.disable();
     this.formularioContacto.get('apellido')?.disable();
-    this.formularioContacto.get('dni')?.disable();
+    this.formularioContacto.get('dni')?.disable();*/
   }
  enviar(){
   console.log(this.formularioContacto)
