@@ -1,10 +1,26 @@
-<!--Esto va aparecer mientras sea false-->
-<ng-container *ngIf="!loading">
-<h1 >Producto: {{product?.name}}</h1>
-<h2 [ngStyle]="{'color': color}">Precio: {{product?.price | currency}}</h2>
-<!--Para que la descripcion no aparezca si no hay datos hacemos esta estructura de control-->
-<h3 *ngIf="product?.description">Descripcion: {{product?.description}}</h3>
-</ng-container>
+<div class="center">
+  <div class="card" style="max-width: 20rem" *ngIf="!loading">
+    <img
+      src="{{ product?.image }}"
+      class="card-img-top"
+      alt="{{ product?.title }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ product?.title | uppercase }}</h5>
+      <h6>{{ product?.price | currency }}</h6>
+      <p class="card-text">{{ product?.description }}</p>
+    </div>
+  </div>
+</div>
+
+<!--Esto va aparecer mientras sea false
+<ng-container *ngIf="!loading">-->
+
+<!--Para que la descripcion no aparezca si no hay datos hacemos esta estructura de control
+<h3 *ngIf="product?.description">Description: {{product?.description}}</h3>
+</ng-container>-->
 
 <!--Esto va a aparecer mientras sea true-->
-<ng-container *ngIf="loading"><i style="color: blue;">Cargando información...</i> </ng-container>
+<ng-container *ngIf="loading"
+  ><i style="color: blue">loading...</i>
+</ng-container>
