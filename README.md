@@ -32,4 +32,5 @@ https://gist.github.com/sergiecode
     - Formulario reactivos (Reactive)
 17. Ciclos de Vida
 18. APIs y Http Client
+19. Novedades Angular 16
 
