@@ -33,4 +33,5 @@ https://gist.github.com/sergiecode
 17. Ciclos de Vida
 18. APIs y Http Client
 19. Novedades Angular 16
-20. Angular 17
+20. Angular 1719. Novedades Angular 16
+
